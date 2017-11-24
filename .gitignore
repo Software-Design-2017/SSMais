@@ -5,3 +5,5 @@ htmlcov
 !**/migrations
 !**/migrations/__init__.py
 virtual/
+dist/
+ssmais.egg-info

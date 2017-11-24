@@ -22,7 +22,10 @@ setup(
     include_package_data=True,
     license='GPL 3.0',
     description='SSMais is a Django application that aims to perform reservation management of a service over the Web.',
-    long_description=README.md,
+    long_description='''SSMais is a Django application that aims to perform reservation management of a service over the Web.
+    The main purpose of this application is to allow the reuse of features that are generally used in scheduling
+    software such as scheduling, searching and registering services.
+    ''',
     url='https://github.com/Software-Design-2017/SSMais',
     author='Mais Software Inc.',
     author_email=' maissoftwareinc@gmail.com',
@@ -30,9 +33,9 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.11',  # replace "X.Y" as appropriate
+        'Framework :: Django :: 1.11',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: GPL 3.0',  # example license
+        'License :: OSI Approved :: GPL 3.0',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
