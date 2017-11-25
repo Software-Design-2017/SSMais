@@ -20,7 +20,7 @@ setup(
     version='0.1',
     packages=find_packages(),
     include_package_data=True,
-    license='GPL 3.0',
+    license='GPLv3',
     description='SSMais is a Django application that aims to perform reservation management of a service over the Web.',
     long_description='''SSMais is a Django application that aims to perform reservation management of a service over the Web.
     The main purpose of this application is to allow the reuse of features that are generally used in scheduling
@@ -35,7 +35,7 @@ setup(
         'Framework :: Django',
         'Framework :: Django :: 1.11',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: GPL 3.0',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
