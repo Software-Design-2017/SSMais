@@ -7,6 +7,7 @@ from django.shortcuts import render
 # local django
 from provider.models import Provider
 from service.models import Service
+from search.forms import SearchForm
 
 
 class Search:
@@ -60,7 +61,6 @@ class SearchDecorator(Search):
         # Refine search using decorator
         self.refine_search()
 
-
     @abc.abstractmethod
     def refine_search(self):
         """
@@ -68,3 +68,28 @@ class SearchDecorator(Search):
         get_list_itens and set_list_itens
         """
         return
+
+
+class ProviderSearchAndList(ListView):
+    model = Provider
+    template_name = None
+    context_object_name = 'providers'
+    paginate_by = 10
+    type_search='provider'
+    name = ''
+
+    def get_queryset(self):
+        search = SearchName(name=self.name, type_search=self.type_search)
+        search.to_search()
+        return search.get_list_itens()
+
+    def get(self, request, *args, **kwargs):
+        form = SearchForm(request.GET or None)
+        return render(request, self.template_name, {'providers': self.get_queryset(), 'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = SearchForm(request.POST or None)
+        if form.is_valid():
+            self.name = form.cleaned_data.get('name')
+
+        return render(request, self.template_name, {'providers': self.get_queryset(), 'form': form})
