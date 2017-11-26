@@ -5,11 +5,11 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.http import HttpResponseRedirect
 
-from .models import (
+from ..models import (
     Service, Combo
 )
 
-from .forms import (
+from ..forms import (
     ComboForm
 )
 

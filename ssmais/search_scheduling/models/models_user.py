@@ -1,11 +1,10 @@
 # Django.
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
-from ssmais.user import constants
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    name = models.CharField(blank=False, max_length=constants.NAME_FIELD_LENGTH, default="")
+    name = models.CharField(blank=False, max_length=80, default="")
     email = models.EmailField(unique=True)
 
     is_active = models.BooleanField(default=False)

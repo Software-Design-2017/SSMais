@@ -3,8 +3,7 @@ from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 # Local Django.
-from .models import User
-from . import constants
+from ..models import User
 
 
 class RegisterForm(forms.ModelForm):
@@ -46,17 +45,17 @@ class RegisterForm(forms.ModelForm):
 class LoginForm(forms.Form):
     email = forms.EmailField()
     password = forms.CharField(
-        widget=forms.PasswordInput, label=_(constants.PASSWORD))
+        widget=forms.PasswordInput, label=_('Password'))
 
     def clean(self, *args, **kwargs):
         password = self.cleaned_data.get("password")
 
-        if len(password) < constants.PASSWORD_MIN_LENGTH:
+        if len(password) < 8:
             raise forms.ValidationError(
-                {'password': [_(constants.PASSWORD_SIZE)]})
-        elif len(password) > constants.PASSWORD_MAX_LENGTH:
+                {'password': [_('Password must be between 8 and 12 characters')]})
+        elif len(password) > 12:
             raise forms.ValidationError(
-                {'password': [_(constants.PASSWORD_SIZE)]})
+                {'password': [_('Password must be between 8 and 12 characters')]})
         else:
             pass
 

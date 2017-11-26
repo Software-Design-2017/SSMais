@@ -1,6 +1,6 @@
 from django.db import models
 
-from ssmais.provider.models import Provider
+from . import Provider
 
 class Service(models.Model):
     name = models.CharField(max_length=120)

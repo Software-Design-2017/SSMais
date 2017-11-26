@@ -6,9 +6,9 @@ from django.shortcuts import render
 from django.views.generic import ListView
 
 # local django
-from ssmais.provider.models import Provider
-from ssmais.service.models import Service
-from ssmais.search.forms import SearchForm
+from ..models import Provider
+from ..models import Service
+from ..forms import SearchForm
 
 
 class Search:
