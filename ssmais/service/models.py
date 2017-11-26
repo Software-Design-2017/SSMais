@@ -1,10 +1,12 @@
 from django.db import models
 
+from ssmais.provider.models import Provider
 
 class Service(models.Model):
     name = models.CharField(max_length=120)
     description = models.TextField(max_length=500)
     price = models.FloatField(blank=False, null=False)
+    provider = models.ForeignKey(Provider)
 
     def __str__(self):
         return self.name
@@ -15,10 +17,10 @@ class Combo(Service):
     services = models.ManyToManyField(Service, through='ServiceCombo', related_name='services')
 
     def add(self, service):
-        ServicesCombo.objects.create(service_combo=self, service_in_combo=service)
+        ServiceCombo.objects.create(service_combo=self, service_in_combo=service)
 
     def remove(self, service):
-        service_combo = ServicesCombo.objects.filter(service_combo=self, service_in_combo=service)
+        service_combo = ServiceCombo.objects.filter(service_combo=self, service_in_combo=service)
         service_combo.delete()
 
 

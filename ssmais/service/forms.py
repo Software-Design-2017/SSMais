@@ -26,12 +26,10 @@ class ServiceForm(forms.ModelForm):
 
 
 class ComboForm():
-    provider = None
     ServiceComboFormSet = forms.inlineformset_factory(Combo, ServiceCombo,
                                                       form=ServiceForm, extra=0,
                                                       fk_name='service_combo',
                                                       min_num=2, validate_min=True)
-
     def __init__(self, provider):
         self.ServiceComboFormSet.form = ServiceForm.__create_service_form__(provider=provider)
 
@@ -45,4 +43,4 @@ class BaseServiceForm(forms.ModelForm):
 
     class Meta:
         model = Service
-        exclude = ['provider']
+        exclude = ['']
