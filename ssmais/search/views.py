@@ -12,12 +12,17 @@ class Search:
 
 
 class SearchName(Search):
-    def __init__(self, name, **kwargs):
+    list_itens = None
+
+    def __init__(self, name, type_search="provider", **kwargs):
          self.name = name
+         self.type_search = type_search
 
     def get_type_search(self):
-        search_name = {'name': self.name}
-        return search_name
+        if type_search is 'provider':
+            # TODO Search
+        elif type_search is 'service':
+            # TODO Search
 
 
 class SearchDecorator(Search):
