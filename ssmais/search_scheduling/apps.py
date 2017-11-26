@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class SsMaisConfig(AppConfig):
-    name = 'ssmais'
+class SearchSchedulingConfig(AppConfig):
+    name = 'search_scheduling'
