@@ -1,7 +1,7 @@
 # Django.
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
-from user import constants
+from ssmais.user import constants
 
 
 class User(AbstractBaseUser, PermissionsMixin):

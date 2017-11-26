@@ -1,6 +1,6 @@
 from django import forms
 
-from ssmais.service.models import (
+from .models import (
     Service, Combo, ServiceCombo
 )
 
