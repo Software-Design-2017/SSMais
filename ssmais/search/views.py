@@ -79,7 +79,7 @@ class ProviderSearchAndList(ListView):
     name = ''
 
     def get_queryset(self):
-        search = SearchName(name=self.name, type_search=self.type_search)
+        search = self.define_researches()
         search.to_search()
         return search.get_list_itens()
 
@@ -90,6 +90,13 @@ class ProviderSearchAndList(ListView):
     def post(self, request, *args, **kwargs):
         form = SearchForm(request.POST or None)
         if form.is_valid():
-            self.name = form.cleaned_data.get('name')
+            self.get_fields(form)
 
         return render(request, self.template_name, {'providers': self.get_queryset(), 'form': form})
+
+    def get_fields(self, form):
+        self.name = form.cleaned_data.get('name')
+
+    def define_researches(self):
+        search = SearchName(name=self.name, type_search=self.type_search)
+        return search
