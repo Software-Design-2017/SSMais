@@ -1,0 +1,20 @@
+# EMAIL FIELDS.
+EMAIL_FIELD_LENGTH = 60
+
+# NAME FIELDS.
+NAME_FIELD_LENGTH = 80
+
+# EMAIL VALIDATION MESSAGES.
+EMAIL_FORMAT = 'Enter a valid email address'
+
+# NAME VALIDATION MESSAGES
+NAME_SIZE = 'Your name exceeds 60 characteres'
+NAME_CHARACTERS = 'Your name can\'t have special characters'
+
+# PASSWORD FIELDS
+PASSWORD = 'Password'
+PASSWORD_MIN_LENGTH = 8
+PASSWORD_MAX_LENGTH = 12
+
+# PASSWORD VALIDATION MESSAGES.
+PASSWORD_SIZE = 'Password must be between 8 and 12 characters'
