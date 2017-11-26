@@ -17,9 +17,9 @@ requires = [str(ir.req) for ir in install_reqs]
 
 setup(
     name='ssmais',
-    version='0.2',
-    packages=find_packages(),
+    version='0.7.8',
     include_package_data=True,
+    packages=find_packages(),
     license='GPLv3',
     description='SSMais is a Django application that aims to perform reservation management of a service over the Web.',
     long_description='''SSMais is a Django application that aims to perform reservation management of a service over the Web.
@@ -44,4 +44,5 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
+    platforms='any',
 )

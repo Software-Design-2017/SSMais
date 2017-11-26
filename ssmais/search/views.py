@@ -3,11 +3,12 @@ import abc
 
 # Django
 from django.shortcuts import render
+from django.views.generic import ListView
 
 # local django
-from provider.models import Provider
-from service.models import Service
-from search.forms import SearchForm
+from ssmais.provider.models import Provider
+from ssmais.service.models import Service
+from ssmais.search.forms import SearchForm
 
 
 class Search:
@@ -77,6 +78,7 @@ class ProviderSearchAndList(ListView):
     paginate_by = 10
     type_search='provider'
     name = ''
+    form_request = None
 
     def get_queryset(self):
         search = self.define_researches()
@@ -84,11 +86,11 @@ class ProviderSearchAndList(ListView):
         return search.get_list_itens()
 
     def get(self, request, *args, **kwargs):
-        form = SearchForm(request.GET or None)
+        form = self.form_request(request.GET or None)
         return render(request, self.template_name, {'providers': self.get_queryset(), 'form': form})
 
     def post(self, request, *args, **kwargs):
-        form = SearchForm(request.POST or None)
+        form = self.form_request(request.POST or None)
         if form.is_valid():
             self.get_fields(form)
 
