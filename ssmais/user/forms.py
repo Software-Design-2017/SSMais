@@ -1,4 +1,3 @@
-import logging
 # Django.
 from django import forms
 from django.utils.translation import ugettext_lazy as _
@@ -6,9 +5,6 @@ from django.utils.translation import ugettext_lazy as _
 # Local Django.
 from .models import User
 from . import constants
-
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger('EmbelezaMais')
 
 
 class RegisterForm(forms.ModelForm):
