@@ -24,3 +24,9 @@ Quick start
 
 4. Start the development server and visit http://127.0.0.1:8000/admin/
    to create a ssmais (you'll need the Admin app enabled).
+
+=====
+PyPI
+=====
+
+A more stable version of the package is in: https://pypi.python.org/pypi/ssmais
