@@ -18,7 +18,7 @@ requires = [str(ir.req) for ir in install_reqs]
 
 setup(
     name='ssmais',
-    version='0.7.9.24',
+    version='1.0',
     include_package_data=True,
     packages=find_packages(),
     license='GPLv3',
