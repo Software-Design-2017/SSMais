@@ -12,14 +12,7 @@ class Provider(models.Model):
 
 
 class OperatingHours(models.Model):
-    days_of_week = {'sunday', 'Sunday',
-                    'monday', 'Monday',
-                    'tuesday', 'Tuesday',
-                    'wednesday', 'Wednesday',
-                    'thirsday', 'Thirsday',
-                    'friday', 'Friday',
-                    'saturday', 'Saturday'}
     provider = models.ForeignKey('Provider', on_delete=models.CASCADE)
-    day = models.CharField(choice=days_of_week)
+    day = models.CharField(max_length=20)
     open_hour = models.TimeField()
     close_hour = models.TimeField()
