@@ -2,6 +2,7 @@ from django.db import models
 
 from . import Provider
 
+
 class Service(models.Model):
     name = models.CharField(max_length=120)
     description = models.TextField(max_length=500)
